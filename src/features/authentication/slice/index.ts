@@ -16,16 +16,20 @@ const slice = createSlice({
     initialState: { user: null, accessToken: null } as AuthState,
     reducers: {
         setUser: (
-            state,
+            state: RootState,
             { payload }: PayloadAction<{ user: User; accessToken: string }>
         ) => {
             state.user = payload.user;
             state.accessToken = payload.accessToken;
+        },
+        removeUser: (state: RootState) => {
+            state.user = null;
+            state.accessToken = null;
         }
     }
 })
 
 export const selectCurrentUser = (state: RootState) => state.auth.user;
 
-export const { setUser } = slice.actions;
+export const { setUser, removeUser } = slice.actions;
 export default slice.reducer;

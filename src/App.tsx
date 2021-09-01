@@ -5,10 +5,8 @@ import AppView from './app-view'
 
 function App() {
   return (
-      <Provider store={store}>
-        <AppView />
-      </Provider>
-  )
+      <AppView />
+  );
 }
 
 export default App
