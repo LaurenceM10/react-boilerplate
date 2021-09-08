@@ -13,14 +13,14 @@ describe('authentication slice', function () {
         const user = { userId: '1', username: 'Laurence' }
         const authState = reducer({ user: null, accessToken: null }, setUser({ user, accessToken: '123' }));
 
-        expect(authState).toEqual({ user, accessToken: '123' })
+        expect(authState).toEqual({ user, accessToken: '123' });
         expect(authState).not.toBe({ user: null, accessToken: null });
     })
 
     test('should remove the user and access token from the state', function () {
         const user = { userId: '1', username: 'Laurence' }
-        const authState = reducer({ user, accessToken: '123456' }, removeUser(null));
+        const authState = reducer({ user, accessToken: '123456' }, removeUser());
 
         expect(authState).toEqual({ user: null, accessToken: null })
-    })
+    });
 });

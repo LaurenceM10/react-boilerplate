@@ -16,13 +16,13 @@ const slice = createSlice({
     initialState: { user: null, accessToken: null } as AuthState,
     reducers: {
         setUser: (
-            state: RootState,
+            state,
             { payload }: PayloadAction<{ user: User; accessToken: string }>
         ) => {
             state.user = payload.user;
             state.accessToken = payload.accessToken;
         },
-        removeUser: (state: RootState) => {
+        removeUser: (state) => {
             state.user = null;
             state.accessToken = null;
         }
