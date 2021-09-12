@@ -12,21 +12,14 @@ interface LoginFormProps {
 }
 
 function LoginForm({ onLogin } : LoginFormProps) {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<IFormValues>();
 
     const onSubmit: SubmitHandler<IFormValues> = data => {
-        console.log({ data })
         onLogin(data);
     };
 
-    useEffect(() => {
-        if(Object.keys(errors).length) {
-            console.log({ errors });
-        }
-    }, [errors]);
-
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="card align-middle rounded-lg mt-52 container md:p-24 bg-white">
+        <form name="login-form" onSubmit={handleSubmit(onSubmit)} className="card align-middle rounded-lg mt-52 container md:p-24 bg-white">
             <div className="mx-auto">
                 <p className="pb-6 -mt-2 text-xl text-center">Sign In</p>
             </div>
@@ -34,13 +27,30 @@ function LoginForm({ onLogin } : LoginFormProps) {
                 <Input
                     type="text"
                     placeholder="username"
-                    register={register('username', { required: true, maxLength: 20, minLength: 6 })}
+                    register={register('username', {
+                        required: true,
+                        maxLength: {
+                            value: 20,
+                            message: "max length is 20"
+                        },
+                        minLength: {
+                            value: 6,
+                            message: "min length is 5"
+                        }
+                    })}
                 />
+                {errors.username && <span role="alert">{errors.username.message}</span>}
                 <Input
                     type="password"
                     placeholder="password"
-                    register={register('password', { required: true, maxLength: 50, minLength: 8 })}
+                    register={register('password', { required: true,
+                        minLength: {
+                            value: 8,
+                            message: "min length is 8"
+                        }
+                    })}
                 />
+                {errors.password && <span role="alert">{errors.password.message}</span>}
                 <input type="submit" className="focus: shadow-sm w-full mt-6 btn bg-green-600 rounded text-white p-2" value="Sign in" />
             </div>
         </form>

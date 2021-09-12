@@ -7,7 +7,9 @@ function AppView() {
         <Router>
             <div className="app">
                 <Switch>
-                    <Route exact path="/"><LoginPage /></Route>
+                    <Route exact path="/login">
+                        <LoginPage />
+                    </Route>
                 </Switch>
             </div>
         </Router>

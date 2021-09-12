@@ -4,6 +4,7 @@ exports[`<LoginForm /> should render the <LoginForm /> component 1`] = `
 <DocumentFragment>
   <form
     class="card align-middle rounded-lg mt-52 container md:p-24 bg-white"
+    name="login-form"
   >
     <div
       class="mx-auto"
