@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 // Types
 import { IFormValues } from "./types";
-import Input from "features/login/views/input";
+import Input from "app/components/input";
 
 // Components
 

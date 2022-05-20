@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputProps } from "./types";
+import { InputProps } from "../../features/login/views/types";
 
 function Input({ type, placeholder, register } : InputProps) {
     return (
