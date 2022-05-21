@@ -5,6 +5,9 @@ export type InputType = 'text' | 'password' | 'email';
 export interface IFormValues {
     username: string;
     password: string;
+    email: string,
+    firstname: string,
+    lastname: string,
 }
 
 export interface InputProps {
