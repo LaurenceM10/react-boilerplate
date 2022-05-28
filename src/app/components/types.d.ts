@@ -1,4 +1,4 @@
-import {UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 export type InputType = 'text' | 'password' | 'email';
 
