@@ -1,5 +1,5 @@
-import reducer, {removeUser, setUser} from "../../../../src/features/authentication/slice";
-import {AnyAction} from "redux";
+import reducer, { removeUser, setUser } from "../../../../src/features/authentication/slice";
+import { AnyAction } from "redux";
 
 describe('authentication slice', function () {
     test('should return the initial state', function () {

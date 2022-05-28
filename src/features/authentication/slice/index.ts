@@ -1,5 +1,5 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {RootState} from "app/store/store";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from "app/store/store";
 
 interface User {
     userId: string,
