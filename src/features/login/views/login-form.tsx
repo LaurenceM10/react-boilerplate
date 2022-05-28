@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 
 // Types
-import { IFormValues } from "../../../app/components/types";
+import { IFormValues } from "app/components/types";
 import Input from "app/components/input";
 
 // Components
