@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 
 // Types
 import { IFormValues } from "app/components/types";
-import Input from "app/components/input";
 
 // Components
+import Input from "app/components/input";
 
 interface LoginFormProps {
     onLogin: (values: IFormValues) => void
